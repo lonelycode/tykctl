@@ -1,0 +1,88 @@
+{
+	"type":"object",
+	"$schema": "http://json-schema.org/draft-04/schema",
+	"id": "http://jsonschema.net",
+	"properties":{
+		"access_rights": {
+			"id": "http://jsonschema.net/access_rights",
+
+            "patternProperties": {
+                "^[a-zA-Z0-9]+$": {
+                    "title": "accessRightsProperty",
+					"type":"object",
+					"id": "http://jsonschema.net/access_rights/accessRightsProperty",
+					"properties":{
+						"api_id": {
+							"type":"string",
+							"id": "http://jsonschema.net/access_rights/accessRightsProperty/api_id"
+						},
+						"api_name": {
+							"type":"string",
+							"id": "http://jsonschema.net/access_rights/accessRightsProperty/api_name"
+						},
+						"versions": {
+							"type":"array",
+							"id": "http://jsonschema.net/access_rights/accessRightsProperty/versions",
+							"items":
+								{
+									"type":"string",
+									"id": "http://jsonschema.net/access_rights/accessRightsProperty/versions/0"
+
+								}
+						}
+					},
+					"required": ["api_id", "api_name", "versions"]
+				}
+            }
+        },
+		"allowance": {
+			"type":"number",
+			"id": "http://jsonschema.net/allowance"
+		},
+		"expires": {
+			"type":"number",
+			"id": "http://jsonschema.net/expires"
+		},
+		"last_check": {
+			"type":"number",
+			"id": "http://jsonschema.net/last_check"
+		},
+		"tags": {
+			"type":"array"
+		},
+		"meta_data": {
+			"type":"object"
+		},
+		"per": {
+			"type":"number",
+			"id": "http://jsonschema.net/per"
+		},
+		"quota_max": {
+			"type":"number",
+			"id": "http://jsonschema.net/quota_max"
+		},
+		"quota_remaining": {
+			"type":"number",
+			"id": "http://jsonschema.net/quota_remaining"
+		},
+		"quota_renewal_rate": {
+			"type":"number",
+			"id": "http://jsonschema.net/quota_renewal_rate"
+		},
+		"quota_renews": {
+			"type":"number",
+			"id": "http://jsonschema.net/quota_renews"
+		},
+		"rate": {
+			"type":"number",
+			"id": "http://jsonschema.net/rate"
+		},
+		"alias": {
+			"type":"string",
+			"id": "http://jsonschema.net/rate"
+		}
+	},
+	"required": [
+            "allowance", "per",  "quota_max", "rate"
+        ]
+}
